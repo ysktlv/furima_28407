@@ -41,6 +41,7 @@ Things you may want to cover:
 ### Association
 
 - has_many :items
+- has_many :orders
 
 ## items テーブル
 
@@ -50,7 +51,7 @@ Things you may want to cover:
 | price         | integer    | null: false                    |
 | text          | text       | null: false                    |
 | category      | integer    | null: false                    |
-| condition     | string     | null: false                    |
+| condition     | integer    | null: false                    |
 | shipping_fee  | integer    | null: false                    |
 | shipping_area | integer    | null: false                    |
 | shipping_days | integer    | null: false                    |
@@ -63,16 +64,30 @@ Things you may want to cover:
 
 ## orders テーブル
 
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user_id | references | null: false, foreign_key: true |
+| item_id | references | null: false, foreign_key: true |
+
+
+### Association
+
+- belongs_to :user
+- belongs_to :item
+- has_one :address
+
+## addresses テーブル
+
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
 | postal_code     | string     | null: false                    |
-| prefecture      | string     | null: false                    |
+| prefecture      | integer    | null: false                    |
 | city            | string     | null: false                    |
 | house_number    | string     | null: false                    |
 | building_number | string     |                                |
 | phone_number    | integer    | null: false                    |
-| item_id         | references | null: false, foreign_key: true |
+| order_id        | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :items
+- belongs_to :order
