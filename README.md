@@ -41,21 +41,19 @@ Things you may want to cover:
 ### Association
 
 - has_many :items
-- has_many :orders
 
 ## items テーブル
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | name          | string     | null: false                    |
-| image         | string     | null: false                    |
 | price         | integer    | null: false                    |
 | text          | text       | null: false                    |
-| category      | string     | null: false                    |
+| category      | integer    | null: false                    |
 | condition     | string     | null: false                    |
 | shipping_fee  | integer    | null: false                    |
-| shipping_area | string     | null: false                    |
-| shipping_days | string     | null: false                    |
+| shipping_area | integer    | null: false                    |
+| shipping_days | integer    | null: false                    |
 | user_id       | references | null: false, foreign_key: true |
 
 ### Association
@@ -73,10 +71,8 @@ Things you may want to cover:
 | house_number    | string     | null: false                    |
 | building_number | string     |                                |
 | phone_number    | integer    | null: false                    |
-| user_id         | references | null: false, foreign_key: true |
 | item_id         | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :users
 - belongs_to :items
