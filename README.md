@@ -55,26 +55,26 @@ Things you may want to cover:
 | shipping_fee  | integer    | null: false                    |
 | shipping_area | integer    | null: false                    |
 | shipping_days | integer    | null: false                    |
-| user_id       | references | null: false, foreign_key: true |
+| user          | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- has_one :orders
+- has_one :order
+- has_one :address
 
 ## orders テーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| user_id | references | null: false, foreign_key: true |
-| item_id | references | null: false, foreign_key: true |
+| user    | references | null: false, foreign_key: true |
+| item    | references | null: false, foreign_key: true |
 
 
 ### Association
 
 - belongs_to :user
 - belongs_to :item
-- has_one :address
 
 ## addresses テーブル
 
@@ -86,8 +86,8 @@ Things you may want to cover:
 | house_number    | string     | null: false                    |
 | building_number | string     |                                |
 | phone_number    | integer    | null: false                    |
-| order_id        | references | null: false, foreign_key: true |
+| item            | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :order
+- belongs_to :item
