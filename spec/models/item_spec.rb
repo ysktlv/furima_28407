@@ -3,7 +3,7 @@ require "rails_helper"
 describe Item do
   before do
     @item = FactoryBot.build(:item)
-    @item.image = fixture_file_upload('public/images/test_image.jpeg')
+    @item.image = fixture_file_upload("public/images/test_image.jpeg")
   end
 
   describe "商品出品" do
@@ -64,7 +64,7 @@ describe Item do
         expect(@item.errors.full_messages).to include("価格は300~9,999,999円の範囲で設定してください")
       end
       it "価格が9,999,999円以上だと登録できない" do
-        @item.price = 10000000
+        @item.price = 10_000_000
         @item.valid?
         expect(@item.errors.full_messages).to include("価格は300~9,999,999円の範囲で設定してください")
       end
