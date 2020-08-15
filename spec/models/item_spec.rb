@@ -49,7 +49,7 @@ describe Item do
         expect(@item.errors.full_messages).to include("配送元の地域を入力してください")
       end
       it "発送までの日数についての情報がないと登録できない" do
-        @item.shipping_days_id = 1
+        @item.shipping_day_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("発送までの日数を入力してください")
       end

@@ -54,7 +54,7 @@ Things you may want to cover:
 | condition     | integer    | null: false                    |
 | shipping_fee  | integer    | null: false                    |
 | shipping_area | integer    | null: false                    |
-| shipping_days | integer    | null: false                    |
+| shipping_day  | integer    | null: false                    |
 | user          | references | null: false, foreign_key: true |
 
 ### Association
