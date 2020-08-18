@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe OrderAddress, type: :model do
   before do
@@ -38,7 +38,7 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order.errors.full_messages).to include("電話番号を入力してください")
       end
       it "郵便番号にハイフンがないと登録できない" do
-        @order.postal_code = 1234567
+        @order.postal_code = 1_234_567
         @order.valid?
         expect(@order.errors.full_messages).to include("郵便番号はハイフンを含めてください")
       end

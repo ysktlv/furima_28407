@@ -2,8 +2,8 @@ class OrderAddress
   include ActiveModel::Model
   attr_accessor :user_id, :item_id, :postal_code, :prefecture, :city, :house_number, :building_number, :phone_number
 
-  VALID_POSTAL_CODE_REGEX = /\A\d{3}[-]\d{4}\z/
-  VALID_PHONE_NUMBER_REGEX = /\A\d{10,11}\z/
+  VALID_POSTAL_CODE_REGEX = /\A\d{3}[-]\d{4}\z/.freeze
+  VALID_PHONE_NUMBER_REGEX = /\A\d{10,11}\z/.freeze
 
   validates :city, :house_number, presence: true
   validates :postal_code, presence: true, format: { with: VALID_POSTAL_CODE_REGEX, message: "はハイフンを含めてください" }
