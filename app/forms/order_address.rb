@@ -5,9 +5,10 @@ class OrderAddress
   VALID_POSTAL_CODE_REGEX = /\A\d{3}[-]\d{4}\z/
   VALID_PHONE_NUMBER_REGEX = /\A\d{10,11}\z/
 
-  validates :prefecture, :city, :house_number, presence: true
-  validates :postal_code, presence: true, format: { with: VALID_POSTAL_CODE_REGEX }
-  validates :phone_number, presence: true, format: { with: VALID_PHONE_NUMBER_REGEX }
+  validates :city, :house_number, presence: true
+  validates :postal_code, presence: true, format: { with: VALID_POSTAL_CODE_REGEX, message: "はハイフンを含めてください" }
+  validates :prefecture, presence: true, numericality: { other_than: 1, message: "を入力してください" }
+  validates :phone_number, presence: true, format: { with: VALID_PHONE_NUMBER_REGEX, message: "はハイフンを含まない11桁以内で入力してください" }
 
   def save
     Order.create(user_id: user_id, item_id: item_id)
