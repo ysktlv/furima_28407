@@ -31,7 +31,6 @@ Things you may want to cover:
 | ------------------ | ------ | ----------- |
 | nickname           | string | null: false |
 | email              | string | null: false |
-| password           | string | null: false |
 | last_name          | string | null: false |
 | first_name         | string | null: false |
 | last_name_reading  | string | null: false |
@@ -45,17 +44,17 @@ Things you may want to cover:
 
 ## items テーブル
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| name          | string     | null: false                    |
-| price         | integer    | null: false                    |
-| text          | text       | null: false                    |
-| category      | integer    | null: false                    |
-| condition     | integer    | null: false                    |
-| shipping_fee  | integer    | null: false                    |
-| shipping_area | integer    | null: false                    |
-| shipping_day  | integer    | null: false                    |
-| user          | references | null: false, foreign_key: true |
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| name             | string     | null: false                    |
+| price            | integer    | null: false                    |
+| text             | text       | null: false                    |
+| category_id      | integer    | null: false                    |
+| condition_id     | integer    | null: false                    |
+| shipping_fee_id  | integer    | null: false                    |
+| shipping_area_id | integer    | null: false                    |
+| shipping_day_id  | integer    | null: false                    |
+| user             | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -85,9 +84,10 @@ Things you may want to cover:
 | city            | string     | null: false                    |
 | house_number    | string     | null: false                    |
 | building_number | string     |                                |
-| phone_number    | integer    | null: false                    |
+| phone_number    | string     | null: false                    |
 | item            | references | null: false, foreign_key: true |
+| user            | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :item
+- has_one :item
