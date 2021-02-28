@@ -1,27 +1,24 @@
-# README
+# 練習用
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+某フリマアプリに似せたアプリ。
 
-Things you may want to cover:
+## URL
 
-* Ruby version
+**https://furima-28407.herokuapp.com/**
 
-* System dependencies
+## テスト用アカウント
 
-* Configuration
+### Basic認証
 
-* Database creation
+ユーザー名 admin
 
-* Database initialization
+パスワード 2222
 
-* How to run the test suite
+### ログイン
 
-* Services (job queues, cache servers, search engines, etc.)
+メールアドレス test@test.com
 
-* Deployment instructions
-
-* ...
+パスワード test00
 
 # テーブル設計
 
