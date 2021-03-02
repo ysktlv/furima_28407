@@ -16,7 +16,15 @@
 
 ### ログイン
 
-メールアドレス test@test.com
+#### 出品者用
+
+メールアドレス seller@test.com
+
+パスワード test00
+
+#### 購入者用
+
+メールアドレス buyer@test.com
 
 パスワード test00
 
